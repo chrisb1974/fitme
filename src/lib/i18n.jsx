@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { base44 } from '@/api/base44Client';
+import { useAuth } from '@/lib/AuthContext';
 
 const translations = {
   en: {
@@ -818,26 +819,33 @@ const translations = {
 const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
+  const { user } = useAuth();
   const [lang, setLang] = useState(() => {
     // Persist language in localStorage for instant load
     return localStorage.getItem('fitme_lang') || 'en';
   });
 
-  // Load saved language from user settings on mount
+  // Sync language from the user's account settings once authenticated.
+  // (Runs when the user logs in — not just at mount — so the account's chosen
+  // language is applied even on a device whose local cache is empty. This is
+  // what fixes AI scans/descriptions coming back in English on a FR/ES account.)
   useEffect(() => {
-    async function loadLang() {
+    if (!user?.id) return;
+    let active = true;
+    (async () => {
       try {
         const settings = await base44.entities.UserSettings.list('-created_date', 1);
-        if (settings?.[0]?.language) {
-          setLang(settings[0].language);
-          localStorage.setItem('fitme_lang', settings[0].language);
+        const saved = settings?.[0]?.language;
+        if (active && saved && saved !== lang) {
+          setLang(saved);
+          localStorage.setItem('fitme_lang', saved);
         }
       } catch {
         // ignore
       }
-    }
-    loadLang();
-  }, []);
+    })();
+    return () => { active = false; };
+  }, [user?.id]);
 
   const setLangAndPersist = (code) => {
     setLang(code);
