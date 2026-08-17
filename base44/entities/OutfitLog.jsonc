@@ -1,0 +1,67 @@
+{
+  "name": "OutfitLog",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the outfit was worn"
+    },
+    "occasion": {
+      "type": "string",
+      "enum": [
+        "Uni",
+        "Dinner",
+        "Club",
+        "Date",
+        "Sport",
+        "Travel",
+        "Work"
+      ],
+      "description": "Occasion for the outfit"
+    },
+    "item_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs of wardrobe items worn"
+    },
+    "item_snapshots": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "description": "Snapshot of items at time of logging"
+    },
+    "outfit_name": {
+      "type": "string",
+      "description": "Name of the outfit (from Look Generator if used)"
+    },
+    "saved_look_id": {
+      "type": "string",
+      "description": "Reference to SavedLook if used"
+    },
+    "notes": {
+      "type": "string",
+      "description": "User notes about the outfit"
+    }
+  },
+  "required": [
+    "date"
+  ],
+  "rls": {
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

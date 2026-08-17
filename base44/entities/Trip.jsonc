@@ -1,0 +1,75 @@
+{
+  "name": "Trip",
+  "type": "object",
+  "properties": {
+    "destination": {
+      "type": "string",
+      "description": "Trip destination city/country"
+    },
+    "date_from": {
+      "type": "string",
+      "format": "date",
+      "description": "Trip start date"
+    },
+    "date_to": {
+      "type": "string",
+      "format": "date",
+      "description": "Trip end date"
+    },
+    "trip_types": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Types of activities on the trip"
+    },
+    "special_event": {
+      "type": "string",
+      "description": "Any special event during the trip"
+    },
+    "trip_name": {
+      "type": "string",
+      "description": "AI-generated trip name"
+    },
+    "packing_list": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "description": "AI-generated packing list with wardrobe items"
+    },
+    "missing_items": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "description": "Items Claude suggests buying"
+    },
+    "packing_tips": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Packing tips from Claude"
+    }
+  },
+  "required": [
+    "destination",
+    "date_from",
+    "date_to"
+  ],
+  "rls": {
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

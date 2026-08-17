@@ -1,0 +1,25 @@
+export const MARKET_LISTINGS = [
+  { id: 'm1', name: 'Zara Floral Midi Dress', brand: 'Zara', category: 'Dresses', size: 'S', condition: 'Like new', price: 22, listingType: 'sale', seller: 'maria_style', emoji: '👗', description: 'Worn twice, perfect condition. Beautiful floral print, hits just below the knee. No stains or damage.' },
+  { id: 'm2', name: 'Mango Cream Blazer', brand: 'Mango', category: 'Tops', size: 'M', condition: 'Good', price: 35, listingType: 'sale', seller: 'lucia.moda', emoji: '🧥', description: 'Great quality blazer. Slight wear on elbows but barely visible. Perfect for office or evenings.' },
+  { id: 'm3', name: 'Nike Air Max 90 White', brand: 'Nike', category: 'Shoes', size: '38', condition: 'Like new', price: 45, listingType: 'sale', seller: 'sofia_fits', emoji: '👟', description: 'Worn only 3 times. Kept in box. Fresh white colorway, no yellowing.' },
+  { id: 'm4', name: 'H&M Denim Jacket', brand: 'H&M', category: 'Tops', size: 'S', condition: 'Good', price: 15, listingType: 'sale', seller: 'ana_bcn', emoji: '🧥', description: 'Classic denim jacket, slightly distressed look. Washed many times, still looks great.' },
+  { id: 'm5', name: 'Zara Satin Slip Skirt', brand: 'Zara', category: 'Bottoms', size: 'S', condition: 'Like new', price: 19, listingType: 'sale', seller: 'marta.looks', emoji: '👗', description: 'Wore once to a dinner. Silky smooth, no pulls or damage. Stunning piece.' },
+  { id: 'm6', name: "Levi's 501 Jeans", brand: "Levi's", category: 'Bottoms', size: '27', condition: 'Good', price: 28, listingType: 'sale', seller: 'carmen_v', emoji: '👖', description: 'Classic 501 straight leg. Great fit, some natural fading. Authentic vintage look.' },
+  { id: 'm7', name: '& Other Stories Silk Blouse', brand: '& Other Stories', category: 'Tops', size: 'M', condition: 'Like new', price: 32, listingType: 'sale', seller: 'isabel_stvle', emoji: '👚', description: 'Pure silk, delicate button-down. Worn twice, hand-washed. Comes in original packaging.' },
+  { id: 'm8', name: 'Massimo Dutti Leather Belt', brand: 'Massimo Dutti', category: 'Accessories', size: 'M', condition: 'Like new', price: 0, listingType: 'swap', seller: 'paula.moda', emoji: '👛', description: 'Genuine leather, barely used. Looking to swap for a silk scarf or similar accessory.' },
+  { id: 'm9', name: 'Pull&Bear Oversized Hoodie', brand: 'Pull&Bear', category: 'Tops', size: 'S', condition: 'Good', price: 12, listingType: 'sale', seller: 'nuria_gen', emoji: '🧶', description: 'Super cosy hoodie. Washed many times, still soft. Cream/off-white colour.' },
+  { id: 'm10', name: 'Zara Mini Leather Bag', brand: 'Zara', category: 'Bags', size: 'One size', condition: 'Like new', price: 38, listingType: 'sale', seller: 'elena.fits', emoji: '👜', description: 'Faux leather mini bag with gold chain. Used just a handful of times. Fits phone, cards, keys.' },
+  { id: 'm11', name: 'Mango Strappy Heels', brand: 'Mango', category: 'Shoes', size: '38', condition: 'Good', price: 24, listingType: 'sale', seller: 'lucia.moda', emoji: '👠', description: 'Nude strappy heels, 8cm. Scuff on one sole otherwise perfect. Great for weddings/events.' },
+  { id: 'm12', name: 'H&M Linen Co-ord Set', brand: 'H&M', category: 'Dresses', size: 'S', condition: 'New with tags', price: 28, listingType: 'sale', seller: 'sara_vlc', emoji: '👘', description: 'Never worn, still has tags. Linen blend, ecru colour. Includes matching top and shorts.' },
+  { id: 'm13', name: 'Adidas Gazelle Blue', brand: 'Adidas', category: 'Shoes', size: '37', condition: 'Good', price: 32, listingType: 'sale', seller: 'maria_style', emoji: '👟', description: 'Iconic Gazelle in blue/white. Normal wear signs on sole but uppers clean. Classic trainer.' },
+  { id: 'm14', name: 'Zara Knit Cardigan Beige', brand: 'Zara', category: 'Tops', size: 'M', condition: 'Like new', price: 20, listingType: 'sale', seller: 'marta.looks', emoji: '🧶', description: 'Soft knit cardigan, oversized fit. Worn twice, no pilling. Perfect autumn/spring layer.' },
+  { id: 'm15', name: 'COS Minimalist Tote', brand: 'COS', category: 'Bags', size: 'One size', condition: 'Like new', price: 42, listingType: 'sale', seller: 'ana_bcn', emoji: '👜', description: 'Canvas tote with leather handles. Minimal COS branding. Barely used, no marks inside.' },
+  { id: 'm16', name: 'Stradivarius Floral Top', brand: 'Stradivarius', category: 'Tops', size: 'S', condition: 'Good', price: 9, listingType: 'sale', seller: 'nuria_gen', emoji: '👚', description: 'Cute floral print, short sleeve. Washed well, bright colours still vivid. Great summer top.' },
+];
+
+export const CONDITION_STYLE = {
+  'New with tags': { bg: 'rgba(74,124,89,0.1)', color: '#4A7C59' },
+  'Like new':      { bg: 'rgba(74,124,89,0.1)', color: '#4A7C59' },
+  'Good':          { bg: 'rgba(201,169,110,0.12)', color: '#b5893d' },
+  'Fair':          { bg: 'rgba(168,168,168,0.15)', color: '#6B6B6B' },
+};

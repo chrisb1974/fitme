@@ -1,0 +1,93 @@
+{
+  "name": "SavedLook",
+  "type": "object",
+  "properties": {
+    "outfit_name": {
+      "type": "string",
+      "description": "AI-generated or user-created outfit name"
+    },
+    "style_description": {
+      "type": "string",
+      "description": "Short style description from Claude"
+    },
+    "styling_tip": {
+      "type": "string",
+      "description": "Styling tip from Claude"
+    },
+    "item_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs of selected wardrobe items"
+    },
+    "item_snapshots": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "description": "Snapshot of item data at time of saving"
+    },
+    "match_score": {
+      "type": "number",
+      "description": "Match percentage (0-100)"
+    },
+    "occasion_prompt": {
+      "type": "string",
+      "description": "The user's original prompt"
+    },
+    "date_saved": {
+      "type": "string",
+      "format": "date"
+    },
+    "season": {
+      "type": "string",
+      "description": "Season this look belongs to"
+    },
+    "is_favourite": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether user has favourited this look"
+    },
+    "is_manual": {
+      "type": "boolean",
+      "default": false,
+      "description": "true = user-created outfit, false = AI-generated"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "User-defined tags e.g. gym, daily, work"
+    },
+    "times_worn": {
+      "type": "number",
+      "default": 0,
+      "description": "How many times this outfit was worn"
+    },
+    "last_worn_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Last date this outfit was worn"
+    }
+  },
+  "required": [
+    "outfit_name",
+    "item_ids"
+  ],
+  "rls": {
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

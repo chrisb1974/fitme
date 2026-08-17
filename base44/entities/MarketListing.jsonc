@@ -1,0 +1,94 @@
+{
+  "name": "MarketListing",
+  "type": "object",
+  "properties": {
+    "wardrobe_item_id": {
+      "type": "string",
+      "description": "ID of the WardrobeItem this listing is linked to"
+    },
+    "title": {
+      "type": "string",
+      "description": "Listing title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Listing description"
+    },
+    "price": {
+      "type": "number",
+      "description": "Asking price in euros"
+    },
+    "condition": {
+      "type": "string",
+      "enum": [
+        "New with tags",
+        "Like new",
+        "Good",
+        "Fair"
+      ],
+      "description": "Item condition"
+    },
+    "size": {
+      "type": "string",
+      "description": "Size, e.g. S, M, 38, XL"
+    },
+    "category": {
+      "type": "string",
+      "description": "Item category"
+    },
+    "brand": {
+      "type": "string",
+      "description": "Brand name"
+    },
+    "color": {
+      "type": "string",
+      "description": "Item color"
+    },
+    "season": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Seasons"
+    },
+    "cover_photo": {
+      "type": "string",
+      "description": "URL of the cover photo"
+    },
+    "photos": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "All photo URLs"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "sold",
+        "removed"
+      ],
+      "default": "active",
+      "description": "Listing status"
+    }
+  },
+  "required": [
+    "wardrobe_item_id",
+    "title"
+  ],
+  "rls": {
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

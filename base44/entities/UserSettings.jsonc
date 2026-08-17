@@ -1,0 +1,51 @@
+{
+  "name": "UserSettings",
+  "type": "object",
+  "properties": {
+    "language": {
+      "type": "string",
+      "default": "en",
+      "description": "User's preferred language code"
+    },
+    "weatherSuggestions": {
+      "type": "boolean",
+      "default": true,
+      "description": "Show weather-based outfit suggestions"
+    },
+    "dailyReminder": {
+      "type": "boolean",
+      "default": false,
+      "description": "Daily outfit reminder enabled"
+    },
+    "reminderTime": {
+      "type": "string",
+      "default": "08:00",
+      "description": "Time for daily reminder (HH:MM)"
+    },
+    "rotationReminders": {
+      "type": "boolean",
+      "default": true,
+      "description": "Remind about unworn items"
+    },
+    "shareStyleData": {
+      "type": "boolean",
+      "default": false,
+      "description": "Share style data to improve AI"
+    }
+  },
+  "required": [],
+  "rls": {
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

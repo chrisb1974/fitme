@@ -1,0 +1,115 @@
+{
+  "name": "WardrobeItem",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the item"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Tops",
+        "Bottoms",
+        "Dresses",
+        "Shoes",
+        "Bags",
+        "Accessories",
+        "Jewellery"
+      ],
+      "description": "Item category"
+    },
+    "color": {
+      "type": "string",
+      "description": "Primary color of the item"
+    },
+    "brand": {
+      "type": "string",
+      "description": "Brand name"
+    },
+    "size": {
+      "type": "string",
+      "description": "Size, e.g. S, M, 38, XL"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "User-defined tags"
+    },
+    "style_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "AI-generated style tags"
+    },
+    "photo_url": {
+      "type": "string",
+      "description": "URL of the item photo"
+    },
+    "extra_photos": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Additional photo URLs for marketplace listings"
+    },
+    "emoji": {
+      "type": "string",
+      "description": "Emoji placeholder if no photo"
+    },
+    "times_worn": {
+      "type": "number",
+      "default": 0
+    },
+    "last_worn_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "date_added": {
+      "type": "string",
+      "format": "date"
+    },
+    "is_for_sale": {
+      "type": "boolean",
+      "default": false
+    },
+    "season": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Spring",
+          "Summer",
+          "Autumn",
+          "Winter"
+        ]
+      },
+      "description": "Seasons this item is suitable for"
+    },
+    "notes": {
+      "type": "string",
+      "description": "User notes"
+    }
+  },
+  "required": [
+    "name",
+    "category"
+  ],
+  "rls": {
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}
