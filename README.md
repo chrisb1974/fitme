@@ -43,3 +43,5 @@ Support: [https://app.base44.com/support](https://app.base44.com/support)
 Déploiement continu via Netlify : chaque `git push` sur `main` déclenche un build + déploiement automatique (build `npm run build`, publish `dist`). Voir `netlify.toml`.
 
 <!-- CI verified 699fa85 -->
+
+<!-- public repo · CI 1222Z -->
