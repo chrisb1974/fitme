@@ -129,7 +129,12 @@ Write naturally, like a real seller. Mention brand if known. Keep it under 40 wo
     }
     setSaving(true);
 
-    const photoUrls = photos.map(p => p.url).filter(Boolean);
+    const pickedPhotos = photos.map(p => p.url).filter(Boolean);
+    // Fall back to the wardrobe item's own photos when none were added in the modal,
+    // so the listing shows the real garment photo instead of an emoji.
+    const inheritedPhotos = [item.photo_url, ...(Array.isArray(item.extra_photos) ? item.extra_photos : [])]
+      .filter(isRealUrl);
+    const photoUrls = pickedPhotos.length > 0 ? pickedPhotos : inheritedPhotos;
 
     await base44.entities.WardrobeItem.update(item.id, {
       is_for_sale: true,
