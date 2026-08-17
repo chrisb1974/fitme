@@ -37,3 +37,7 @@ Open [Base44.com](http://Base44.com) and click on Publish.
 Documentation: [https://docs.base44.com/Integrations/Using-GitHub](https://docs.base44.com/Integrations/Using-GitHub)
 
 Support: [https://app.base44.com/support](https://app.base44.com/support)
+
+## Déploiement
+
+Déploiement continu via Netlify : chaque `git push` sur `main` déclenche un build + déploiement automatique (build `npm run build`, publish `dist`). Voir `netlify.toml`.
