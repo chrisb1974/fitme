@@ -3,6 +3,7 @@
 // Body: { base64Image?, photoUrl?, lang? }
 import { corsHeaders, json } from '../_shared/cors.ts';
 import { invokeClaude, defaultModel } from '../_shared/anthropic.ts';
+import { getUserId } from '../_shared/auth.ts';
 
 const CATEGORIES = ['Tops', 'Bottoms', 'Dresses', 'Shoes', 'Bags', 'Accessories', 'Jewellery'];
 const SEASONS = ['Spring', 'Summer', 'Autumn', 'Winter'];
@@ -56,6 +57,8 @@ async function callGoogleVision(base64Data: string) {
 
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') return new Response('ok', { headers: corsHeaders });
+
+  if (!getUserId(req)) return json({ error: 'Unauthorized' }, 401);
 
   try {
     const { base64Image, photoUrl, lang } = await req.json();
